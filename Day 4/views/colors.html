@@ -1,0 +1,28 @@
+<div>
+    <select ng-options="color.text for color in colors" ng-model="myColor"></select>
+</div>
+<div>
+    <select ng-options="color.text group by color.type for color in colors" ng-model="myColor2" ng-change="changeColor(myColor2)"></select>
+    <tr>
+        <p> <span ng-class="selectedColor" style="font-size: 30pt"> Hello! </span></p>
+    </tr>
+</div>
+<div>
+    <p>Filter by: <input type="text" ng-model="a"/></p>
+
+    <p>Order by: <input type="text" ng-model="b"/></p>
+</div>
+<div>
+    <li ng-repeat="color in colors">{{color.text}}</li>
+</div>
+
+    <div>
+        <p> Filtered list</p>
+        <li ng-repeat="color in colors | filter: a">{{color.text}}</li>
+    </div>
+
+<div>
+    <p> Ordered list</p>
+    <li ng-repeat="color in colors | orderBy: b">{{color.text}}</li>
+</div>
+

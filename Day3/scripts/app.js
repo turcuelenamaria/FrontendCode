@@ -26,7 +26,7 @@ hrApp.config(['$routeProvider',
                 controller: 'EmployeeViewController'
             }).
 
-        otherwise({
+        otherwise  ({
             templateUrl: 'views/main.html',
             controller: 'MainController'
         });
